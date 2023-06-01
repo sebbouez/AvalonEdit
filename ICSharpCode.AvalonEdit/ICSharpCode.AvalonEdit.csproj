@@ -14,6 +14,7 @@
     <AssemblyVersion>6.3.0.0</AssemblyVersion>
     <FileVersion>6.3.0.0</FileVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <LangVersion>10</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -29,13 +30,10 @@
     <PackageIcon>images\AvalonEditNuGetPackageIcon.png</PackageIcon>
     <PackageTags>WPF Text Editor SharpDevelop AvalonEdit</PackageTags>
     <PackageReleaseNotes>Changes are detailed at https://github.com/icsharpcode/AvalonEdit/blob/master/ChangeLog.md</PackageReleaseNotes>
+
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <PackageReadmeFile>PackageReadme.md</PackageReadmeFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="docs\PackageReadme.md" Pack="true" PackagePath="\" />
-  </ItemGroup>
-
   <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
