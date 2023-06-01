@@ -1,18 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFrameworks>net6.0-windows;netcoreapp3.1;net462</TargetFrameworks>
+    <TargetFrameworks>net6.0-windows;net7.0-windows;net462</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
     <DefineConstants>TRACE</DefineConstants>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>ICSharpCode.AvalonEdit.snk</AssemblyOriginatorKeyFile>
     <Company>ic#code</Company>
-    <Copyright>2000-2022 AlphaSierraPapa for the SharpDevelop Team</Copyright>
-    <Description>AvalonEdit is the WPF-based text editor used in SharpDevelop. There are five builds of AvalonEdit included in this package: .NET Framework 4.5 and 4.0, .NET Core 3.1, .NET 5.0 for Windows, .NET 6.0 for Windows.</Description>
-    <Version>6.1</Version>
-    <AssemblyVersion>6.1.0.0</AssemblyVersion>
-    <FileVersion>6.1.0.0</FileVersion>
+    <Copyright>2000-2023 AlphaSierraPapa for the SharpDevelop Team</Copyright>
+    <Description>AvalonEdit is the WPF-based text editor used in SharpDevelop.</Description>
+    <Version>6.3</Version>
+    <AssemblyVersion>6.3.0.0</AssemblyVersion>
+    <FileVersion>6.3.0.0</FileVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <LangVersion>10</LangVersion>
   </PropertyGroup>
@@ -30,19 +30,24 @@
     <PackageIcon>images\AvalonEditNuGetPackageIcon.png</PackageIcon>
     <PackageTags>WPF Text Editor SharpDevelop AvalonEdit</PackageTags>
     <PackageReleaseNotes>Changes are detailed at https://github.com/icsharpcode/AvalonEdit/blob/master/ChangeLog.md</PackageReleaseNotes>
+
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <PackageReadmeFile>PackageReadme.md</PackageReadmeFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net6.0-windows' ">
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net7.0-windows' ">
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net462' ">
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
-  
+
   <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>

@@ -37,6 +37,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 	/// </summary>
 	sealed class HeightTree : ILineTracker, IDisposable
 	{
+  
 		#region Constructor
 		readonly TextDocument document;
 		HeightTreeNode root;
